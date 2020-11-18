@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  box-sizing: border-box;
+}
+:root {
+  --yellow: #fae100;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--yellow);
+  padding: 30px;
+}
+.searchBox {
+  display: flex;
+  justify-content: space-between;
+  background-color: wheat;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
+}
+.searchBox .search,
+.searchBox i {
+  margin: 0px 10px;
+  opacity: 0.5;
+}
+.book_title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px;
+}
+.book_contents {
+   display: flex;
+   margin-top: 25px;
+}
+.book_contents img {
+  width: 150px;
+  height: 250px;
+  margin-left: 20px;
+}
+.book_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+.book_name {
+  font-size: 25px;
+  font-weight: 600;
+}
+.book_author {
+  opacity: 0.3;
+}
+
+.stars i {
+  color: var(--yellow);
+}
+
+.book_Btn-1 {
+  display: flex;
+}
+.book_Btn-1 button {
+  background-color: rgba(128, 128, 128, 0.096);
+  border: none;
+  margin: 10px 10px 10px 0px;
+}
+.book_Btn-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.book_Btn-2 i {
+  background-color: var(--yellow);
+  padding: 10px;
+  border-radius: 50%;
+}
+.book_Btn-2 button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  margin: 10px 10px 10px 0px;
+}
+}
