@@ -5,7 +5,10 @@
 :root {
   --yellow: #fae100;
 }
-
+html {
+  width: 666px;
+  height: 812px;
+}
 body {
   font-family: "Nunito", sans-serif;
 }
@@ -15,22 +18,31 @@ p {
 }
 
 .nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   background-color: var(--yellow);
   padding: 30px;
+  margin-bottom: 50px;
 }
 .nav > span {
   font-size: 20px;
   font-weight: 600;
 }
 .searchBox {
+  position: absolute;
+  top: 80px;
   display: flex;
   justify-content: space-between;
-  background-color: wheat;
-  border-radius: 20px;
-  margin: 20px;
-  padding: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  width: 630px;
+  height: 50px;
+  padding: 5px 20px;
+  margin: 0px 15px;
+  border-radius: 30px;
+  background-color: white;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 }
 .searchBox .search,
 .searchBox i {
@@ -41,8 +53,10 @@ p {
 .adventures_title,
 .authors_title {
   font-size: 30px;
+  display: block;
   font-weight: 600;
-  margin: 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 .book_contents {
   display: flex;
@@ -67,10 +81,6 @@ p {
 .book_author {
   opacity: 0.3;
   font-size: 20px;
-}
-
-.stars i {
-  color: var(--yellow);
 }
 
 .book_Btn-1 {
