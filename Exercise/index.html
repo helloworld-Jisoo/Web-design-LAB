@@ -4,15 +4,76 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
+  <title>Jamie's Pizza</title>
 </head>
 <body>
-  <h1>JavaScript Example</h1>
-  <p>Number 1</p>
-  <input id="no1" type="number"></input>
-  <p>Number 2</p>
-  <input id="no2" type="number"></input>
-  <button id="submit" onclick="click()">Submit</button>
-<script src="script.js"></script>
+
+  <div class="container">
+    <div class="header">
+      <h2>Jamie's Pizza Place</h2>
+    </div>
+
+  <!-- User name -->
+  <form class="form" id = "form">
+    <div class="form-control">
+      <label>USER NAME</label>
+      <input id="username" type="text" placeholder="User name" > 
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
+    </div>
+  <!-- Password -->
+    <div class="form-control">
+      <label>PASSWORD</label>
+      <input id="password" type="password" size="7" placeholder="Password"> 
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
+    </div>
+   <!-- SIZE OF PIZZA -->
+    <div class="form-control">
+      <label>SIZE OF THE PIZZA</label>
+      <select name="size" id="size"onchange="calculateTotal()" >
+      <option value="None">Select Size of pizza</option>
+      <option value="Large" >Large(&euro;5.00)</option>
+      <option value="Extra-Large" >Extra Large(&euro;7.00)</option>
+      <option value="Super-Size">Super Size(&euro;17.00)</option>
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
+    </select>
+    </div>
+
+  <!-- NUMBER OF PIZZA -->
+    <div class="form-control">
+      <label>THE NUMBER OF PIZZA</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" onchange="calculateTotal()" > 
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
+    </div>
+
+      <!-- DISCOUNT CODE -->
+    <div class="form-control">
+      <label>DISCOUNT CODE</label>
+      <input id="discount" type="text" placeholder="discount code" > 
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
+    </div>
+    <div class="form-totaa">
+    <span class="total_title">Total: </span>
+    <span class="total_value"> 0 </span>
+  </div>
+    <button type="submit">Submit</button>
+
+  </form>
+
+</div>
+
+
+<script src="validation.js"></script>
+<script src="cal.js"></script>
+<script src="https://kit.fontawesome.com/9597d7e626.js" crossorigin="anonymous"></script>
 </body>
 </html>
