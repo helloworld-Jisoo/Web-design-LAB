@@ -7,14 +7,12 @@
   <title>Jamie's Pizza</title>
 </head>
 <body>
-
   <div class="container">
     <div class="header">
       <h2>Jamie's Pizza Place</h2>
     </div>
-
   <!-- User name -->
-  <form class="form" id = "form">
+  <form class="form" id = "form" onsubmit="return false;">
     <div class="form-control">
       <label>USER NAME</label>
       <input id="username" type="text" placeholder="User name" > 
@@ -30,46 +28,33 @@
       <i class="fas fa-exclamation-circle"></i>
       <small>Error Message</small>
     </div>
+    <button type="submit">Submit</button>
    <!-- SIZE OF PIZZA -->
     <div class="form-control">
       <label>SIZE OF THE PIZZA</label>
-      <select name="size" id="size"onchange="calculateTotal()" >
+      <select name="size" id="size" >
       <option value="None">Select Size of pizza</option>
       <option value="Large" >Large(&euro;5.00)</option>
       <option value="Extra-Large" >Extra Large(&euro;7.00)</option>
       <option value="Super-Size">Super Size(&euro;17.00)</option>
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
     </select>
+    <div class="result"></div>
     </div>
 
   <!-- NUMBER OF PIZZA -->
     <div class="form-control">
       <label>THE NUMBER OF PIZZA</label>
-      <input type="number" id="quantity" name="quantity" min="1" max="10" onchange="calculateTotal()" > 
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
+      <input type="number" id="quantity" name="quantity" min="1">
+      <p id="log"></p> 
     </div>
 
       <!-- DISCOUNT CODE -->
     <div class="form-control">
       <label>DISCOUNT CODE</label>
       <input id="discount" type="text" placeholder="discount code" > 
-      <i class="fas fa-check-circle"></i>
-      <i class="fas fa-exclamation-circle"></i>
-      <small>Error Message</small>
     </div>
-    <div class="form-totaa">
-    <span class="total_title">Total: </span>
-    <span class="total_value"> 0 </span>
-  </div>
-    <button type="submit">Submit</button>
-
-  </form>
-
-</div>
+    <div id="totalPrice"></div>
+</form>
 
 
 <script src="validation.js"></script>
