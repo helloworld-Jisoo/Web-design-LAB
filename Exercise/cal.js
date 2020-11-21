@@ -1,4 +1,25 @@
 
+/* Try 5
+const quantity = document.getElementById('quantity');
+const size = document.getElementById('size');
+const total = 0;
+
+function calculation(){
+  if(size.value=="None"){
+		alert("Please select a milk");
+		return;
+	}else if(size.value=="Large"){
+		total = quantity * 5.00;
+	}else if(size.value=="Extra-Large"){
+    total = quantity * 7.00;
+	}else if(size.value =="Super-Size"){
+    total = quantity * 17.00;
+  }
+  alert('The coffee is worth €'+parseFloat(total).toFixed(2));
+}
+/*
+
+/* Try 4
 const select = document.querySelector('select');
 const number = document.querySelector('.result');
 
@@ -13,7 +34,7 @@ function sizeValue() {
     sizeValue =17.00;} 
     else (choice === 'none')
   sizeValue = 0.00;
-}
+}*/
 
 
 
@@ -75,8 +96,13 @@ let Size = new Array();
       document.getElementById('total-price').style.innerHTML = total;
       
 btn.addEventListener('click', function(){
-*/
-/* Try 1
+ Try 1 */
+const Size = new Array();
+ Size["None"]=0;
+ Size["Large"]=5;
+ Size["Extra-large"]=7;
+ Size["Super-Size"]=17;
+
 function getPizzaNumberPrice(){
   let pizzaNumberPrice = 0;
   const quantity = document.getElementById('quantity');
@@ -87,7 +113,6 @@ function getPizzaNumberPrice(){
 }
 function getPizzaSizePrice(){
 let pizzaSizePrice=0;
-const selectedPizza = form.getElementById('size');
 pizzaSizePrice = pizza_price[selectedPizza.value];
   return pizzaSizePrice;
 }
@@ -98,4 +123,4 @@ function calculateTotal() {
   let total = document.getElementById('total_value');
   total.style.display='block';
   toaal.innerHTML = "TOTAL PRICE FOR THE PIZZA €"+pizzaPrice;
-}*/
+}

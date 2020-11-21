@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="cal.js"></script>
   <title>Jamie's Pizza</title>
 </head>
 <body>
@@ -32,7 +33,7 @@
    <!-- SIZE OF PIZZA -->
     <div class="form-control">
       <label>SIZE OF THE PIZZA</label>
-      <select name="size" id="size" >
+      <select name="size" id="size">
       <option value="None">Select Size of pizza</option>
       <option value="Large" >Large(&euro;5.00)</option>
       <option value="Extra-Large" >Extra Large(&euro;7.00)</option>
@@ -44,14 +45,13 @@
   <!-- NUMBER OF PIZZA -->
     <div class="form-control">
       <label>THE NUMBER OF PIZZA</label>
-      <input type="number" id="quantity" name="quantity" min="1">
-      <p id="log"></p> 
+      <input type="number" id="quantity" name="quantity" min="1" oninput="calculateTotal()"> 
     </div>
 
       <!-- DISCOUNT CODE -->
     <div class="form-control">
       <label>DISCOUNT CODE</label>
-      <input id="discount" type="text" placeholder="discount code" > 
+      <input id="discount" type="text" placeholder="discount code" onchange="calculateTotal()"> 
     </div>
     <div id="totalPrice"></div>
 </form>
