@@ -111,3 +111,26 @@ body {
   width: 100%;
   margin-bottom: 20px;
 }
+
+#wrap div#totalPrice {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #006490;
+  color: #fff;
+  font-family: inherit;
+}
+
+#wrap label.radiolabel {
+  font-weight: normal;
+  display: inline;
+}
+
+#wrap .cont_details fieldset,
+.cont_order fieldset {
+  margin: 10px;
+  padding: 20px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}

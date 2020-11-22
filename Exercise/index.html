@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="cal.js"></script>
   <title>Jamie's Pizza</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
       <h2>Jamie's Pizza Place</h2>
     </div>
   <!-- User name -->
-  <form class="form" id = "form" onsubmit="return false;">
+  <form class="form" id = "form" >
     <div class="form-control">
       <label>USER NAME</label>
       <input id="username" type="text" placeholder="User name" > 
@@ -30,32 +30,31 @@
       <small>Error Message</small>
     </div>
     <button type="submit">Submit</button>
+
    <!-- SIZE OF PIZZA -->
     <div class="form-control">
       <label>SIZE OF THE PIZZA</label>
       <select name="size" id="size">
-      <option value="None">Select Size of pizza</option>
-      <option value="Large" >Large(&euro;5.00)</option>
-      <option value="Extra-Large" >Extra Large(&euro;7.00)</option>
-      <option value="Super-Size">Super Size(&euro;17.00)</option>
+      <option class="option" value="None">Select Size of pizza</option>
+      <option class="option" value="5" >Large(&euro;5.00)</option>
+      <option class="option" value="7" >Extra Large(&euro;7.00)</option>
+      <option class="option" value="17" onchange="alert('Are you sure you want to Super size?'">Super Size(&euro;17.00)</option>
     </select>
-    <div class="result"></div>
     </div>
-
   <!-- NUMBER OF PIZZA -->
     <div class="form-control">
       <label>THE NUMBER OF PIZZA</label>
-      <input type="number" id="quantity" name="quantity" min="1" oninput="calculateTotal()"> 
+      <input type="number" id="quantity" class="quantity" name="quantity" min="1"> 
     </div>
-
+    <div class="result"></div>
+  </br>
       <!-- DISCOUNT CODE -->
     <div class="form-control">
       <label>DISCOUNT CODE</label>
-      <input id="discount" type="text" placeholder="discount code" onchange="calculateTotal()"> 
+      <input id="discount" type="text" placeholder="discount code" > 
     </div>
     <div id="totalPrice"></div>
 </form>
-
 
 <script src="validation.js"></script>
 <script src="cal.js"></script>
