@@ -1,37 +1,45 @@
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
+const pizzano = document.getElementById('pizzano');
+const discount = document.getElementById('discount');
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	
-	checkInputs();
+  checkInputs();
 });
 
 function checkInputs() {
-	// trim to remove the whitespaces
   const usernameValue = username.value.trim();
   const passwordValue = password.value.trim();
+  const pizzanoValue =  pizzano.value.trim();
+  const discountValue = discount.value.trim();
 
   if (usernameValue === '') {
-    // show error
-    // add error class
     setErrorFor(username, 'User name cannot be blank');
   } else {
-    // add success clss
     setSuccessFor(username);
-  }
+  };
 
   if (passwordValue.length < 7 ) {
-    // show error
-    // add error class
     setErrorFor(password, 'Password must be 7 character');
   } else {
-    // add success clss
     setSuccessFor(password);
+  };
+
+  if (pizzanoValue === '') {
+    setErrorFor(pizzano, 'Number cannot be blank');
+  } else if (!isNumeric(pizzanoValue)) {
+    setErrorFor(pizzano, 'Numeric characters only');
+  } else {
+    setSuccessFor(pizzano);
+  }
+
+  if (discountValue === 'extracheese') {
+    setSuccessFor(discount);
   }
 }
-
 function setErrorFor(input,message) {
   const formControl = input.parentElement; //.form-control
   const small = formControl.querySelector('small');
@@ -43,3 +51,10 @@ function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className =  'form-control success';
 }
+
+function isNumeric(pizzano) {
+  return /^[0-9]+$/.test(pizzano);
+}
+
+
+

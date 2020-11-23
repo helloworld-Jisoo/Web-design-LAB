@@ -1,25 +1,54 @@
-// how to get values from HTML? LIKE, WHEN THE SIZE OR NUMBER IS CHANGED, I WANNA GET DATA FROM HTML?
-const size = document.querySelector('select'); 
-const result = document.querySelector('.result');
-const number = document.querySelector('input');
-
-size.onchange = handleChange;
-number.onchange = handleChange;
-
-function handleChange(e) { // how to use handleChange?
-  parseInt.
-  const result = event(size,number);
-  console.log(result);
+function allnumeric(pizzano,pizzasize){
+  var numbers = /^[0-9]+$/;
+  if(pizzano.value.match(numbers)){
+    var tot_price=0;
+      if  (pizzasize.value=="LG") {
+    tot_price = 5 * pizzano.value
+    }
+    if  (pizzasize.value=="XL") {
+    tot_price = 7 * pizzano.value
+    }
+    if  (pizzasize.value=="SU") {
+    tot_price = 17 * pizzano.value;
+    alert("Warning : Supersize selected");
+    }
+let tot_amount = document.getElementById('tot_amount');
+tot_amount.value = tot_price;
+    return true;
+  }
+  else{return false;}
 }
 
 
-function multiply(size, number){
-  return size * number;
-}
 
-function print(size, number) {
-  console.log(`${size} ${number}`);
-}
+function calculateTotal(pizzano,pizzasize,discount) {
+  var discount = document.getElementById('discount');
+  var tot_price=0;
+  const discountValue = 90;
 
-handleChange(multiply);
+  if (pizzasize=="LA") {
+tot_price = 5 * pizzano
+}
+if  (pizzasize=="XL") {
+tot_price = 7 * pizzano 
+}
+if  (pizzasize=="SU") {
+tot_price = 17 * pizzano;
+alert("Warning : Supersize selected")
+}
+if  (pizzasize=="LA" && discount == "extracheese") {
+  tot_price = 5 * pizzano / discountValue
+  }
+  if  (pizzasize=="XL"&& discount == "extracheese") {
+  tot_price = 7 * pizzano / discountValue
+  if  (pizzasize=="SU"&& discount == "extracheese") {
+  tot_price = 17 * pizzano / discountValue;
+  alert("Warning : Supersize selected")
+  }
+  
+let tot_anount = document.getElementById('tot_amount');
+tot_anount.value = tot_price; 
+
+}}
+
 

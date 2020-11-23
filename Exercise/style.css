@@ -47,7 +47,8 @@ body {
   margin-bottom: 5px;
 }
 
-.form-control input {
+.form-control input,
+.form-control select {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -99,7 +100,8 @@ body {
   visibility: visible;
 }
 
-.form button {
+.form button,
+#submit {
   background-color: #006490;
   border: 2px solid #006490;
   border-radius: 5px;
@@ -110,27 +112,4 @@ body {
   padding: 10px;
   width: 100%;
   margin-bottom: 20px;
-}
-
-#wrap div#totalPrice {
-  padding: 10px;
-  font-weight: bold;
-  background-color: #006490;
-  color: #fff;
-  font-family: inherit;
-}
-
-#wrap label.radiolabel {
-  font-weight: normal;
-  display: inline;
-}
-
-#wrap .cont_details fieldset,
-.cont_order fieldset {
-  margin: 10px;
-  padding: 20px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
 }

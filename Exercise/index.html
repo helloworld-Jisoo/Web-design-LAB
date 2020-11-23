@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jamie's Pizza</title>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
       <h2>Jamie's Pizza Place</h2>
     </div>
   <!-- User name -->
-  <form class="form" id = "form" >
+  <form class="form" id = "form" name="pizzaForm" >
     <div class="form-control">
       <label>USER NAME</label>
       <input id="username" type="text" placeholder="User name" > 
@@ -21,6 +22,7 @@
       <i class="fas fa-exclamation-circle"></i>
       <small>Error Message</small>
     </div>
+
   <!-- Password -->
     <div class="form-control">
       <label>PASSWORD</label>
@@ -29,33 +31,41 @@
       <i class="fas fa-exclamation-circle"></i>
       <small>Error Message</small>
     </div>
-    <button type="submit">Submit</button>
 
    <!-- SIZE OF PIZZA -->
     <div class="form-control">
       <label>SIZE OF THE PIZZA</label>
-      <select name="size" id="size">
-      <option class="option" value="None">Select Size of pizza</option>
-      <option class="option" value="5" >Large(&euro;5.00)</option>
-      <option class="option" value="7" >Extra Large(&euro;7.00)</option>
-      <option class="option" value="17" onchange="alert('Are you sure you want to Super size?'">Super Size(&euro;17.00)</option>
+      <select name="pizzasize" id="pizzasize" >
+      <option value="" disabled selected>Select Size of pizza</option>
+      <option class="option" value="LG" >Large(&euro;5.00)</option>
+      <option class="option" value="XL" >Extra Large(&euro;7.00)</option>
+      <option class="option" value="SU" onchange="alert('Are you sure you want to Super size?')">Super Size(&euro;17.00)</option>
     </select>
     </div>
-  <!-- NUMBER OF PIZZA -->
-    <div class="form-control">
+
+   <!-- NUMBER OF PIZZA -->
+    <div class = "form-control">
       <label>THE NUMBER OF PIZZA</label>
-      <input type="number" id="quantity" class="quantity" name="quantity" min="1"> 
+      <input type="text" id="pizzano" name="pizzano" type="text" size="2" 
+      maxlength="2" onchange="allnumeric(document.pizzaForm.pizzano,document.pizzaForm.pizzasize)"placeholder = "Enter Number of pizza" >
+      <i class="fas fa-check-circle"></i>
+      <i class="fas fa-exclamation-circle"></i>
+      <small>Error Message</small>
     </div>
-    <div class="result"></div>
-  </br>
       <!-- DISCOUNT CODE -->
     <div class="form-control">
       <label>DISCOUNT CODE</label>
-      <input id="discount" type="text" placeholder="discount code" > 
+      <i class="fas fa-check-circle"></i>
+      <input name = "discount" id="discount" type="text" placeholder="Discount code">
+  
     </div>
-    <div id="totalPrice"></div>
-</form>
+    <div class="form-control">
+    <label><b>Pizza Order Total Amount</b></label>
+    <input name="tot_amount" id="tot_amount" type="text" readonly>
+  </div>
+		<input type='submit' id='submit' value='Submit'  onclick="calculateTotal()"/>
 
+</form>
 <script src="validation.js"></script>
 <script src="cal.js"></script>
 <script src="https://kit.fontawesome.com/9597d7e626.js" crossorigin="anonymous"></script>
