@@ -35,11 +35,11 @@
    <!-- SIZE OF PIZZA -->
     <div class="form-control">
       <label>SIZE OF THE PIZZA</label>
-      <select name="pizzasize" id="pizzasize" >
+      <select name="pizzasize" id="pizzasize" onchange="calTotalPrice()">
       <option value="" disabled selected>Select Size of pizza</option>
       <option class="option" value="LG" >Large(&euro;5.00)</option>
       <option class="option" value="XL" >Extra Large(&euro;7.00)</option>
-      <option class="option" value="SU" onchange="alert('Are you sure you want to Super size?')">Super Size(&euro;17.00)</option>
+      <option class="option" value="SU" \>Super Size(&euro;17.00)</option>
     </select>
     </div>
 
@@ -47,7 +47,7 @@
     <div class = "form-control">
       <label>THE NUMBER OF PIZZA</label>
       <input type="text" id="pizzano" name="pizzano" type="text" size="2" 
-      maxlength="2" onchange="allnumeric(document.pizzaForm.pizzano,document.pizzaForm.pizzasize)"placeholder = "Enter Number of pizza" >
+      maxlength="2" onchange="calTotalPrice()"placeholder = "Enter Number of pizza" >
       <i class="fas fa-check-circle"></i>
       <i class="fas fa-exclamation-circle"></i>
       <small>Error Message</small>
@@ -56,14 +56,14 @@
     <div class="form-control">
       <label>DISCOUNT CODE</label>
       <i class="fas fa-check-circle"></i>
-      <input name = "discount" id="discount" type="text" placeholder="Discount code">
+      <input name = "discount" id="discount" type="text" placeholder="Discount code" onchange="calDiscount()">
   
     </div>
     <div class="form-control">
     <label><b>Pizza Order Total Amount</b></label>
     <input name="tot_amount" id="tot_amount" type="text" readonly>
   </div>
-		<input type='submit' id='submit' value='Submit'  onclick="calculateTotal()"/>
+      <input type='submit' id='submit' value='Submit'  onclick="calTotal()"/>
 
 </form>
 <script src="validation.js"></script>

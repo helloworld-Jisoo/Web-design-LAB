@@ -1,54 +1,47 @@
-function allnumeric(pizzano,pizzasize){
+function calTotalPrice(){
+
+  console.log("calTotalPrice");
+
+  var pizzaSize = document.getElementById('pizzasize').value;
+  var pizzaNo = document.getElementById('pizzano').value;
+  var totPrice = 0;
   var numbers = /^[0-9]+$/;
-  if(pizzano.value.match(numbers)){
-    var tot_price=0;
-      if  (pizzasize.value=="LG") {
-    tot_price = 5 * pizzano.value
-    }
-    if  (pizzasize.value=="XL") {
-    tot_price = 7 * pizzano.value
-    }
-    if  (pizzasize.value=="SU") {
-    tot_price = 17 * pizzano.value;
-    alert("Warning : Supersize selected");
-    }
-let tot_amount = document.getElementById('tot_amount');
-tot_amount.value = tot_price;
-    return true;
+
+    if(pizzaNo.match(numbers)) {
+
+      if(pizzaSize == "LG") {
+          totPrice = 5 * pizzaNo;
+
+      } else if(pizzaSize == "XL") {
+          totPrice = 7 * pizzaNo;
+
+      } else if(pizzaSize == "SU") {
+          alert("Warning : Supersize selected");
+          totPrice = 17 * pizzaNo;
+          
+      } else {
+          return false;
+      }
+      
+  } else {
+     return false;
   }
-  else{return false;}
+  document.getElementById('tot_amount').value = totPrice;
+  return true;
 }
 
+function calDiscount() {
+  var discount = document.getElementById('discount').value;
+  var totPrice = document.getElementById('tot_amount').value;
 
-
-function calculateTotal(pizzano,pizzasize,discount) {
-  var discount = document.getElementById('discount');
-  var tot_price=0;
-  const discountValue = 90;
-
-  if (pizzasize=="LA") {
-tot_price = 5 * pizzano
-}
-if  (pizzasize=="XL") {
-tot_price = 7 * pizzano 
-}
-if  (pizzasize=="SU") {
-tot_price = 17 * pizzano;
-alert("Warning : Supersize selected")
-}
-if  (pizzasize=="LA" && discount == "extracheese") {
-  tot_price = 5 * pizzano / discountValue
+  if (totPrice > 0 && discount == "extracheese") {
+     document.getElementById('tot_amount').value = totPrice * 0.9;
+  } else {
+     return false;
   }
-  if  (pizzasize=="XL"&& discount == "extracheese") {
-  tot_price = 7 * pizzano / discountValue
-  if  (pizzasize=="SU"&& discount == "extracheese") {
-  tot_price = 17 * pizzano / discountValue;
-  alert("Warning : Supersize selected")
-  }
-  
-let tot_anount = document.getElementById('tot_amount');
-tot_anount.value = tot_price; 
+}
 
-}}
-
-
+function calTotal() {
+   calTotalPrice();
+  calDiscount();
+}
